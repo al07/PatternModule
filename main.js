@@ -14,7 +14,7 @@ function() {
         
     }
     var _checkInteger = function (x) {
-        if (x.isInteger(x)) {
+        if (Number.isInteger(x)) {
             return true;
         } else {
             return false;
@@ -43,3 +43,11 @@ function() {
 
 
 );
+console.log("Привет");
+counter.setNumber(10); 
+
+counter.increaseCounter(); 
+
+counter.decreaseCounter();  
+
+counter.printCounter();
