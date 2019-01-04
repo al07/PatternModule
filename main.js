@@ -6,7 +6,8 @@ function() {
     
     
     var setNumber = function (x) {
-        if( _checkInteger(x) ) {
+        //Проверяю, что передано целое число и оно точно больше или равно 0
+        if( _checkInteger(x) && x > -1) {
            _number = x;
         } else {
             console.log("Значение ложно!")
@@ -26,7 +27,12 @@ function() {
         _number++;
     }
     var decreaseCounter = function () {
-        _number--;
+        _temp = _number - 1;
+        if (_temp > 0) {
+            _number = _temp;
+        } else {
+            console.log("Счетчик остался без изменений. Счетчик не может стать отрицательным");
+        }
     }
     var printCounter = function () {
         console.log(_number);
@@ -44,10 +50,12 @@ function() {
 
 );
 console.log("Привет");
-counter.setNumber(10); 
+counter.setNumber(1); 
 
 counter.increaseCounter(); 
 
 counter.decreaseCounter();  
+
+counter.decreaseCounter();
 
 counter.printCounter();
